@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item
+        android:id="@+id/bluetooth_set"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/bluetoothSettings"/>
+    <item
+        android:id="@+id/menu_location"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Location"/>
+    <item
+        android:id="@+id/menu_sleep"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Sleep"/>
+    <item
+        android:id="@+id/reloj_analogo"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Reloj Analog"/>
+    <item
+        android:id="@+id/reloj_digital"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="Reloj Digital"/>
+</menu>

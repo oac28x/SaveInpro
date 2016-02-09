@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SaveIN</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="salirdeApp">Salir de aplicacíon.</string>
+    <string name="compSalir">Se procederá a salir de la aplicación.</string>
+
+    <string name="subTitulo1">Calando App</string>
+    <string name="subTitulo2">Reloj Analógico</string>
+    <string name="subTitulo3">Reloj Digital</string>
+
+
+
+    <!-- Menú strings -->
+    <string name="bluetoothSettings">Configuración bluetooth</string>
+
+</resources>
