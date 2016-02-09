@@ -2,19 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
 
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
-
     <item
         android:id="@+id/bluetooth_set"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="@string/bluetoothSettings"/>
     <item
-        android:id="@+id/menu_location"
+        android:id="@+id/bluetooth"
         android:orderInCategory="100"
         app:showAsAction="never"
-        android:title="Location"/>
+        android:title="@string/medioWireless"/>
     <item
         android:id="@+id/menu_sleep"
         android:orderInCategory="100"

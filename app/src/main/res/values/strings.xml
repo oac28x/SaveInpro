@@ -1,17 +1,24 @@
 <resources>
     <string name="app_name">SaveIN</string>
 
-    <string name="action_settings">Settings</string>
     <string name="salirdeApp">Salir de aplicacíon.</string>
     <string name="compSalir">Se procederá a salir de la aplicación.</string>
 
     <string name="subTitulo1">Calando App</string>
     <string name="subTitulo2">Reloj Analógico</string>
     <string name="subTitulo3">Reloj Digital</string>
+    <string name="subTitulo4">Conectividad Bluetooth</string>
 
+    <string name="blueNo">No compatible</string>
+    <string name="blueNoEx">Bluetooth no soportado.</string>
 
+    <string name="Continue">Continuar</string>
+    <string name="exit">Salir</string>
+
+    <string name="beWelcome">Bienvenido</string>
 
     <!-- Menú strings -->
     <string name="bluetoothSettings">Configuración bluetooth</string>
+    <string name="medioWireless">Bluetooth</string>
 
 </resources>

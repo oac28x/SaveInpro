@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Build.VERSION.SDK_INT > 14){                //Aqui está el SDK, calar si funciona.
+        if (Build.VERSION.SDK_INT > 14){
             try{
-                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);  //Esconder la barra de estado
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
             }catch(Exception e){
                 try{
                     View decorView = getWindow().getDecorView();
@@ -41,44 +41,35 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         setContentView(R.layout.activity_main);
-        tituloIcon(" SaveIN"," Bienvenido");
+        tituloIcon("SaveIN", R.string.beWelcome);
 
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (adaptador_bluetooth == null) {
-                    mensajePrompt();
+                    noExisteBluetooth();
                 }
                 startActivity(new Intent(MainActivity.this, clasesita.class));
             }
         });
 
-        findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent turnOn;
-            }
-        });
-
-
         if (!adaptador_bluetooth.isEnabled()) {
             Intent prendete = new Intent(adaptador_bluetooth.ACTION_REQUEST_ENABLE);
             startActivityForResult(prendete, 1);
         }
-        else if(adaptador_bluetooth == null)
-            mensajePrompt();
+        else if(adaptador_bluetooth == null) noExisteBluetooth();
     }
 
-    protected void mensajePrompt(){
-        new AlertDialog.Builder(context).setTitle("No compatible").setMessage("Bluetooth no soportado.")
-                .setPositiveButton("Continuar", new DialogInterface.OnClickListener() {
+    protected void noExisteBluetooth(){
+        new AlertDialog.Builder(context).setTitle(R.string.blueNo).setMessage(R.string.blueNoEx)
+                .setPositiveButton(R.string.Continue, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //No hace nada
                     }
                 })
-                .setNegativeButton("Salir", new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.exit, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         System.exit(0);
@@ -86,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 }).setIcon(R.drawable.warning).show();
     }
 
-    public void tituloIcon(String dato, String datito){
+    public void tituloIcon(String dato, int datito){
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setLogo(R.drawable.rayo_p);
         //getSupportActionBar().setDisplayUseLogoEnabled(true);
@@ -108,10 +99,11 @@ public class MainActivity extends AppCompatActivity {
 
         switch (id){
             case R.id.bluetooth_set:
-                startActivity(new Intent(Settings.ACTION_DATE_SETTINGS));
+                startActivity(new Intent(Settings.ACTION_BLUETOOTH_SETTINGS));
                 break;
-            case R.id.menu_location:
-                startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS));
+            case R.id.bluetooth:
+                fragment = new fragmentBluetooth();
+                replaceFragment();
                 break;
             case R.id.menu_sleep:
                 startActivity(new Intent(Settings.ACTION_BLUETOOTH_SETTINGS));  //ACTION_SOUND_SETTINGS
@@ -124,8 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new fragmentDigital();
                 replaceFragment();
                 break;
-            case R.id.action_settings:
-                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -134,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() > 0 ){
             getFragmentManager().popBackStack();
-            if (getFragmentManager().getBackStackEntryCount() == 1) tituloIcon(" SaveIN"," Bienvenido");
+            if (getFragmentManager().getBackStackEntryCount() == 1) tituloIcon("SaveIN", R.string.beWelcome);
         }
         else
         {

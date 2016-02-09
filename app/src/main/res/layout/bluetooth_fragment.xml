@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:text="Escanear"
+        android:id="@+id/button4"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:text="Bluetooth ON"
+        android:id="@+id/button5"
+        android:clickable="true"
+        android:layout_below="@+id/button4"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btntoggle_selector"
+        android:textOn=""
+        android:textOff=""
+        android:text=""
+        android:layout_alignTop="@+id/contador"
+        android:layout_centerHorizontal="true">
+    </ToggleButton>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:text="Bluetooth OFF"
+        android:id="@+id/button2"
+        android:clickable="true"
+        android:layout_below="@+id/button5"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/texto"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/contador"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/texto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120dp" />
+
+</RelativeLayout>
