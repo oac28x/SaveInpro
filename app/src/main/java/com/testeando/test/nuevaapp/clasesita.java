@@ -21,16 +21,11 @@ public class clasesita extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.segunda);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        setTitle("  Conectividad Bluetooth");
-
-        //final Context contexto = this;
-        final dispos_blue calando = new dispos_blue();
 
         findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (adaptador_bluetooth.isEnabled() && adaptador_bluetooth != null && calando.btSocket == null)
+                if (adaptador_bluetooth.isEnabled() && adaptador_bluetooth != null)
                     startActivity(new Intent(clasesita.this, dispos_blue.class));
 
                 if (!adaptador_bluetooth.isEnabled()) tostada("Activa bluetooth.");

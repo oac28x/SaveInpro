@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,8 +21,10 @@ import android.view.WindowManager;
 public class MainActivity extends AppCompatActivity {
 
     public BluetoothAdapter adaptador_bluetooth = BluetoothAdapter.getDefaultAdapter();
-    Fragment fragment;
-    Context context = this;
+    public BluetoothSocket btSocket;
+
+    public Fragment fragment;
+    public Context context = this;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -35,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     View decorView = getWindow().getDecorView();
                     int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
                     decorView.setSystemUiVisibility(uiOptions);
-                }catch(Exception hu){
-                    //hu no se hace nada
+                }catch(Exception hu){ //hu no se hace nada
                 }
             }
         }
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment();
                 break;
             case R.id.menu_sleep:
-                startActivity(new Intent(Settings.ACTION_BLUETOOTH_SETTINGS));  //ACTION_SOUND_SETTINGS
+                startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));  //ACTION_SOUND_SETTINGS
                 break;
             case R.id.reloj_analogo:
                 fragment = new fragmentAnalog();

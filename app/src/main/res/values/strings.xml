@@ -17,6 +17,18 @@
 
     <string name="beWelcome">Bienvenido</string>
 
+    <!--Tostadas -->
+    <string name="blueTostSi">Bluetooth listo!</string>
+    <string name="blueDesact">Bluetooth desactivado</string>
+    <string name="blueTostNo">Bluetooth no activado</string>
+    <string name="blueActiva">Activa bluetooth</string>
+    <string name="blueNoComp">Bluetooth no compatible</string>
+    <string name="blueEsActi">Bluetooth está activado</string>
+    <string name="blueEsDesa">Bluetooth está desactivado</string>
+
+    <string name="turnOn">Se prende</string>
+    <string name="turnOf">Se apaga</string>
+
     <!-- Menú strings -->
     <string name="bluetoothSettings">Configuración bluetooth</string>
     <string name="medioWireless">Bluetooth</string>

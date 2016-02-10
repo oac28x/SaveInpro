@@ -7,7 +7,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,10 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,7 +43,9 @@ public class dispos_blue extends AppCompatActivity {
 
     private ProgressDialog progress;
     private EditText textoSend;
-    private TextView respText;
+
+
+    //private TextView respText;
 
     //private Context contextoDis = null;
 
@@ -60,7 +58,7 @@ public class dispos_blue extends AppCompatActivity {
         Log.d("WHERE: ", "INICIAMOS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
         textoSend = (EditText) findViewById(R.id.textoSend);
-        respText = (TextView) findViewById(R.id.respText);
+        //respText = (TextView) findViewById(R.id.respText);
 
         listaEncontrados = (ListView) findViewById(R.id.listaDispos);
         btAdaptadores = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
